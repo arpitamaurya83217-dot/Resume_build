@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Landing Page</title>
+
+    <!-- ✅ Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: #222;
+        line-height: 1.6;
+        background: #fff;
+      }
+
+      /* ===== HEADER ===== */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 80px;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 1440px;
+        height: 100px;
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 20px;
+        color: #d81b60;
+        line-height: 1.2;
+      }
+
+      .logo small {
+        font-weight: 400;
+        color: #444;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #222;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #ff0057;
+      }
+
+      .btn-primary {
+        background: #ff0057;
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background: #e6004f;
+      }
+
+      /* ===== HERO SECTION ===== */
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 80px 80px;
+        background: #ffe6ec;
+        flex-wrap: wrap;
+        position: relative;
+        overflow: hidden;
+        width: 1440px;
+        height: 909px;
+      }
+
+      .hero-text {
+        flex: 1;
+        max-width: 600px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-text h1 {
+        font-family: "Figtree", sans-serif;
+        font-size: 64px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        color: #000;
+      }
+
+      .hero-text h1 span {
+        color: #fa1239;
+        font-weight: 800;
+      }
+
+      .hero-text p {
+        font-family: "Figtree", sans-serif;
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 35px;
+        line-height: 1.6;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .btn-outline {
+        border: 2px solid #ff0057;
+        color: #ff0057;
+        padding: 10px 24px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: 0.3s ease;
+      }
+
+      .btn-outline:hover {
+        background: #ff0057;
+        color: #fff;
+      }
+
+      /* ✅ Corrected hero-image (2 ellipses behind girl) */
+      .hero-image {
+        flex: 1;
+        text-align: center;
+        position: relative;
+        
+        width: 633.87px;
+        height: 727.37px;
+       background-position-x: 766px;
+        background-position-y: 190px;
+       
+       
+       
+      }
+
+      /* back ellipse - bada aur light shade */
+      .hero-image .ellipse-back {
+        position: absolute;
+        width: 633.87px;
+        height: 633.88px;
+        background: url("ellipse-6-6.svg") no-repeat center;
+        background-size: contain;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.6;
+        z-index: 0;
+        bottom: 0;
+       
+        
+        
+      }
+
+      /* front ellipse - chhota aur dark shade */
+      .hero-image .ellipse-front {
+        position: absolute;
+        width: 476.45px;
+        height: 476.45px;
+        background: url("ellipse-5-7.svg") no-repeat center;
+        background-size: contain;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.9;
+        z-index: 1;
+        bottom: 0;
+        
+      }
+
+      .hero-image img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 633.87px;
+        height: 727.37px;
+        z-index: 2;
+        bottom: 0;
+        background-position-x: 766px;
+        background-position-y: 190px;
+        
+      }
+
+      .rating-card,
+      .resume-card {
+        position: absolute;
+        background: #fff;
+        padding: 10px 20px;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 3;
+      }
+
+      .rating-card {
+        top: 42%;
+        left: -40px;
+      }
+
+      .resume-card {
+        bottom: 40px;
+        right: -40px;
+      }
+
+      /* ===== FEATURES ===== */
+      .features {
+        text-align: center;
+        padding: 80px 100px;
+        background: #fff;
+      }
+
+      .features .tag {
+        display: inline-block;
+        background: #fcbbc6;
+        color: #000000;
+        font-weight: 600;
+        width: 154px;
+        height: 42px;
+        margin-bottom: 20px;
+        font-family: "Figtree", sans-serif;
+        padding: 10px 20px;
+        border-radius: 6px;
+      }
+
+      .features h2 {
+        font-family: "Figtree", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 60px;
+        line-height: 1.4;
+        color: #000;
+      }
+
+      .features h2 span {
+        color: #ff0057;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+      }
+
+      .feature-card {
+        background: #fff;
+        border-radius: 14px;
+        padding: 30px 25px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: 0.3s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-card img {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 20px;
+      }
+
+      .feature-card h3 {
+        font-family: "Figtree", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #000;
+      }
+
+      .feature-card p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 1024px) {
+        header {
+          padding: 20px 40px;
+        }
+        .hero {
+          padding: 40px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          display: none;
+        }
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          padding: 40px 20px;
+        }
+        .hero-text h1 {
+          font-size: 36px;
+        }
+        .hero-image img {
+          width: 280px;
+        }
+        .rating-card,
+        .resume-card {
+          position: static;
+          display: inline-block;
+          margin: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .hero {
+          padding: 30px 20px;
+        }
+        .hero-text h1 {
+          font-size: 28px;
+        }
+        .hero-text p {
+          font-size: 13px;
+        }
+        .features {
+          padding: 40px 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header>
+      <div class="logo">COMPANY<br /><small>business tagline</small></div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="btn-primary">Get A Quote</a>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Your Resume <span>Deserves A Yes</span> Let’s Make It Happen</h1>
+        <p>
+          If Your Resume Isn’t Getting Responses, It’s Time For An Upgrade. Get
+          An ATS-Optimized Resume Crafted By HR Experts To Help You Land More
+          Interviews. Our Resumes Are Designed To Get Your Foot In The Door And
+          Place Your Name At The Top Of The Shortlist.
+        </p>
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary">RESUME PACKAGES</a>
+          <a href="#" class="btn-outline">CONTACT US</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <!-- ✅ two ellipse backgrounds -->
+        <div class="ellipse-back"></div>
+        <div class="ellipse-front"></div>
+
+        <img src="node-8.png" alt="Hero Girl" />
+
+        <div class="rating-card">⭐ 4.9 Instructor Rating</div>
+        <div  class="resume-card"><img src="mortarboard-11.png" alt="mortarboard-11">Online Resume Created <span>260+</span></div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features">
+      <div class="tag">What You Get</div>
+      <h2>
+        You’re Not Just <span>Another Applicant</span> And Your Resume
+        Shouldn’t Look Like One
+      </h2>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <img src="image copy.png" alt="" />
+          <h3>A Resume Format That Gets You Interviews</h3>
+          <p>
+            Get a professionally written, keyword-optimized resume that lands in
+            recruiter inboxes.
+          </p>
+        </div>
+        <div class="feature-card">
+          <img src="image copy 2.png" alt="" />
+          <h3>A Cover Letter Style That Stands Out Strong</h3>
+          <p>
+            Stand out with a cover letter that speaks directly to the role and
+            reflects your strengths.
+          </p>
+        </div>
+        <div class="feature-card">
+          <img src="image copy 3.png" alt="" />
+          <h3>A LinkedIn Profile That Works For You</h3>
+          <p>
+            Attract the right eyes, start conversations, and show up in
+            recruiter searches.
+          </p>
+        </div>
+        <div class="feature-card">
+          <img src="image copy 4.png" alt="" />
+          <h3>An Interview Strategy That Builds Confidence</h3>
+          <p>
+            Interview preparation with real HR professionals so you speak
+            clearly and confidently.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
